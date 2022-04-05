@@ -1,10 +1,19 @@
 using Charpter.WebApi.Contexts;
+using Charpter.WebApi.interfaces;
 using Charpter.WebApi.Repositories;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 builder.Services.AddSwaggerGen(c =>
     {
@@ -15,6 +24,8 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddScoped<CharpterContext, CharpterContext>();
 builder.Services.AddTransient<LivroRepository, LivroRepository>();
+
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 var app = builder.Build();
 
@@ -38,6 +49,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
