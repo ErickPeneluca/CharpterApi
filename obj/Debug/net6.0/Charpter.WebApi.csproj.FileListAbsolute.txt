@@ -65,3 +65,4 @@
 /home/peneluca/RiderProjects/Charpter.WebApi/Charpter.WebApi/obj/Debug/net6.0/Charpter.WebApi.pdb
 /home/peneluca/RiderProjects/Charpter.WebApi/Charpter.WebApi/obj/Debug/net6.0/Charpter.WebApi.genruntimeconfig.cache
 /home/peneluca/RiderProjects/Charpter.WebApi/Charpter.WebApi/obj/Debug/net6.0/ref/Charpter.WebApi.dll
+/home/peneluca/RiderProjects/Charpter.WebApi/Charpter.WebApi/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

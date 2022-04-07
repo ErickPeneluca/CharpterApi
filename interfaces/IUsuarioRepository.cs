@@ -15,5 +15,4 @@ public interface IUsuarioRepository
     void Deletar(int id);
 
     Usuario Login(string email, string senha);
-
 }

@@ -8,7 +8,5 @@ public class Usuario
 
     public string? Senha { get; set; }
 
-//    public int Tipo { get; set; } 
-    
-    
+    public int Tipo { get; set; }
 }

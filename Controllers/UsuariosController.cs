@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace Charpter.WebApi.Controllers;
 
-    [Produces("application/json")]
-    [Route("api/[controller]")]
-    [ApiController]
+[Produces("application/json")]
+[Route("api/[controller]")]
+[ApiController]
 public class UsuariosController : ControllerBase
 {
     private readonly IUsuarioRepository _iUsuarioRepository;
@@ -26,10 +26,8 @@ public class UsuariosController : ControllerBase
         }
         catch (Exception e)
         {
-
             throw new Exception(e.Message);
         }
-        
     }
 
     [HttpGet("{id}")]
@@ -47,7 +45,6 @@ public class UsuariosController : ControllerBase
         }
         catch (Exception e)
         {
-
             throw new Exception(e.Message);
         }
     }
@@ -63,7 +60,6 @@ public class UsuariosController : ControllerBase
         }
         catch (Exception e)
         {
-
             throw new Exception(e.Message);
         }
     }
@@ -79,7 +75,6 @@ public class UsuariosController : ControllerBase
         }
         catch (Exception e)
         {
-
             throw new Exception(e.Message);
         }
     }
@@ -95,7 +90,6 @@ public class UsuariosController : ControllerBase
         }
         catch (Exception e)
         {
-
             throw new Exception(e.Message);
         }
     }

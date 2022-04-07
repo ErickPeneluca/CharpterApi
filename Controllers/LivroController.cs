@@ -2,12 +2,15 @@ using Charpter.WebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Charpter.WebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Charpter.WebApi.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+    
+    [Authorize(Roles = "1")]
     public class LivroController : ControllerBase
     {
         private readonly LivroRepository _livroRepository;

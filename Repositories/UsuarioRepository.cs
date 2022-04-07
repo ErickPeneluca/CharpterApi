@@ -12,8 +12,8 @@ public class UsuarioRepository : IUsuarioRepository
     {
         _context = context;
     }
-    
-    
+
+
     public void Atualizar(int id, Usuario usuario)
     {
         Usuario usuarioEncontrado = _context.Usuarios.Find(id);
@@ -21,12 +21,11 @@ public class UsuarioRepository : IUsuarioRepository
         {
             usuarioEncontrado.Email = usuario.Email;
             usuarioEncontrado.Senha = usuario.Senha;
- //            usuarioEncontrado.Tipo = usuario.Tipo; 
+            usuarioEncontrado.Tipo = usuario.Tipo;
         }
 
         _context.Usuarios.Update(usuarioEncontrado);
         _context.SaveChanges();
-
     }
 
     public Usuario BuscarPorId(int id)
@@ -48,6 +47,7 @@ public class UsuarioRepository : IUsuarioRepository
         _context.Usuarios.Remove(usuarioEncontrado);
         _context.SaveChanges();
     }
+
     public List<Usuario> Listar()
     {
         return _context.Usuarios.ToList();
@@ -55,6 +55,6 @@ public class UsuarioRepository : IUsuarioRepository
 
     public Usuario Login(string email, string senha)
     {
-        throw new NotImplementedException();
+        return _context.Usuarios.FirstOrDefault(usuario => usuario.Email == email && usuario.Senha == senha);
     }
 }
